@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HTML DOM</title>
+    <!--引用js-->
+    <script src="js/domjs.js"></script>
+    <!--引用css样式-->
+    <link type="text/css" rel="stylesheet" href="css/my.css">
+</head>
+<body onload="checkCookie1()">
+
+<h1 id="testv" onclick="alert('你好！')" onmousemove="style.color='red'" onmouseout="style.color='blue'">Hello World!</h1>
+<h2 onclick="this.innerHTML='谢谢！'">有改变</h2>
+<h3 onclick="changetext(this)">有改变</h3>
+<div id="main">
+    <p>The DOM is very useful.</p>
+    <p>本例演示 <b>getElementsByTagName</b> 方法。</p>
+    <button type="button" onclick="getelement1()"> div 中的第一段文本是</button>
+</div>
+<script>
+    document.write(Date());
+</script><br>
+<p><img id="beau" width="130" height="200" src="src/beauty.png" alt="美女" ></p>
+<p><button id="btn1" type="button" onclick="changeimage()">改变图片</button></p>
+<p>
+    <input type="button" value="隐藏文本" onclick="document.getElementById('testv').style.visibility='hidden'">
+    <input type="button" value="显示文本" onclick="document.getElementById('testv').style.visibility='visible'">
+</p>
+<p>点击按钮就可以执行displayDate()</p>
+<button onclick="displayDate()">点击按钮</button>
+<p id="p1">这是一个人呢</p>
+<button id="btn2">点击按钮</button>
+<script>
+    document.getElementById("btn2").onclick=function () {
+        displayDate()
+    }
+</script>
+<p>请输入英文小写字母<input id="input1" type="text" onchange="upPercase()"></p>
+<div id="div1" onmousemove="mOver(this)" onmouseout="mOut(this)">把鼠标放到上边！</div>
+
+<div id="div2">
+    <p id="p4">这是段落1</p>
+    <p id="p5">这是段落2</p>
+</div>
+<p><button type="button" onclick="createNp()">创建新段落</button></p>
+<p><button type="button" onclick="removeP()">删除段落</button></p>
+<p><button type="button" onclick="getAperson()">获得一个人员</button></p>
+<script>
+    var person1={
+        gender:"男",
+        name:"张飞",
+        age:56
+    }
+    var tex="";
+
+    for(x in person1){
+      tex=tex+person1[x]
+    }
+    document.getElementById("p1").innerText=tex;
+</script>
+<p><button type="button" onclick="getweekend()">获得今天星期几</button></p>
+<p id="txt"></p>
+<p><button type="button" onclick="startTime()">当前的时间</button></p>
+<p><button type="button" onclick="show_confirm()">确认对话框</button></p>
+<p><button type="button" onclick="prompt_dialog()">输入对话框</button></p>
+<p><button type="button" onclick="show_five_s_dialog()">5秒之后显示对话框</button></p>
+<p><button type="button" onclick="show_two_s_dialog()">点击上面的按钮。输入框会显示出已经逝去的时间（2、4、6 秒）</button><input id="txt1"></p>
+<p><input type="button" onclick="start_text_dialog()" value="开始计时"><input id="txt2" type="text" value="0"></p>
+<p><input type="button" onclick="stop_text_dialog()" value="停止计时"></p>
+
+</body>
+</html>

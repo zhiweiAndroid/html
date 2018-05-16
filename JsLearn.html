@@ -3,9 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Javascript</title>
+    <style>
+        input[type="text"]
+        {
+            width: 150px;
+            display: block;
+            margin-bottom: 10px;
+            background-color: yellow;
+            font-family: Verdana, Arial;
+        }
+        input[type="button"]
+        {
+            width: 120px;
+            margin-left: 30px;
+            display:block;
+            font-family: Verdana, Arial;
+        }
+    </style>
 </head>
 <body>
-<script src="MyJs.js"></script>
+<script src="js/MyJs.js"></script>
 <p>
     javascript能够直接写出HTML输出流
 </p>
@@ -20,15 +37,45 @@
 <button type="button" onclick="changecolor()">改变文字颜色属性</button>
 <br>
 <p>请输入数字。如果输入值不是数字，浏览器会弹出提示框。</p>
-<input id="number" type="text"><button type="button" onclick="input()">请输入</button><br>
-<button type="button" onclick="writeAll()">测试覆盖</button><br>
+<input id="number" type="text">
+<button type="button" onclick="input()">请输入</button>
+<br>
+<button type="button" onclick="writeAll()">测试覆盖</button>
+<br>
 <p id="fuzhi"></p>
-<button type="button" onclick="fuzhi()">为段落赋值</button><br>
-<button type="button" onclick="obj()">创建对象</button><br>
-<button type="button" onclick="toUppercase()">变成大写</button><br>
-<button type="button" onclick="alertDialog('张萌',26,'CFO')">函数</button><br>
+<button type="button" onclick="fuzhi()">为段落赋值</button>
+<br>
+<button type="button" onclick="obj()">创建对象</button>
+<br>
+<button type="button" onclick="toUppercase()">变成大写</button>
+<br>
+<button type="button" onclick="alertDialog('张萌',26,'CFO')">函数</button>
+<br>
 <input type="button" value="查看消息" onclick="message()">
+<h1>My first javascript</h1>
+<p>please input a number betweent 5 and 10:</p>
+<input id="input1" type="text">
+<button type="button" onclick="inputError()">测试异常捕获</button>
+<p id="error"></p>
 
+
+<div id="div1">
+    <p id="p1">hello world!</p>
+    <p id="p2">这是一个测试案例</p>
+</div>
+<button type="button" onclick="divfind()">获取p1标签的内容</button>
+
+
+<form name="input" action="" method="get">
+    <input type="text" name="Name" value="Bill" size="20">
+    <input type="text" name="Name" value="Gates" size="20">
+    <input type="button" value="Example Button">
+</form><br>
+<div id="mian">
+    <p>今天天气正好</p>
+    <p>getElementsByTagName方法</p>
+</div>
+<button type="button" onclick="getelement()">获取p标签的内容</button>
 
 </body>
 </html>
