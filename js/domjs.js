@@ -141,43 +141,42 @@ function start_text_dialog() {
 function stop_text_dialog() {
     clearTimeout(t)
 }
-
-function getCookie(c_name)
-{
-    if (document.cookie.length>0)
-    {
-        c_start=document.cookie.indexOf(c_name + "=")
-        if (c_start!=-1)
-        {
-            c_start=c_start + c_name.length+1
-            c_end=document.cookie.indexOf(";",c_start)
-            if (c_end==-1) c_end=document.cookie.length
-            return unescape(document.cookie.substring(c_start,c_end))
+/**
+ * 获取cookie
+ * */
+function checkCookie1() {
+  var username= getCookie("username");
+  if (username==""){
+      var x=prompt("请输入你的账户","");
+      if (x!=null&&x!=""){
+          setCookie("username",x,365);
+      }
+  }else {
+    alert('欢迎'+username+"再次登录")
+  }
+}
+function getCookie(u) {
+    /**username=666;erpires=2018*/
+    var cookie=document.cookie;
+    if (cookie.length>0){
+         start=cookie.indexOf("username");
+        if (start!=-1){
+            start=start+u.length+1;
+            end=cookie.indexOf(";",start)
+            if (end==-1){
+                end=cookie.length;
+            }
+            return unescape(cookie.substring(start,end))
         }
     }
-    return ""
+    return "";
+
+
+}
+function setCookie(c_name,value,expiredays) {
+    var date=new Date();
+    date.setDate(date.getDate()+expiredays);
+    document.cookie=c_name+"="+escape(value)+(expiredays==null?"":";expires="+date.toDateString());
+
 }
 
-function setCookie(c_name,value,expiredays)
-{
-    var exdate=new Date()
-    /**设置为365后的日期*/
-    exdate.setDate(exdate.getDate()+expiredays)
-    document.cookie=c_name+ "=" +escape(value)+
-        ((expiredays==null) ? "" : ";expires="+exdate.toGMTString())
-}
-
-function checkCookie1()
-{
-    username=getCookie('username')
-    if (username!=null && username!="")
-    {alert('Welcome again '+username+'!')}
-    else
-    {
-        username=prompt('Please enter your name:',"")
-        if (username!=null && username!="")
-        {
-            setCookie('username',username,365)
-        }
-    }
-}

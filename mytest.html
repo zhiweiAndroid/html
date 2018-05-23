@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <h1>android js 交互</h1>
+    <script>
+        /**
+         * {
+           "age": 27,
+           "isBoy": true,
+           "name": "zitan"
+            }
+         * @type {string}
+         */
+        var a = "";
+
+        function jsGetMessageFromNative(pass) {
+            var obj = pass;
+            a = "name：" + obj.name + "age:" + obj.age + "isboy:" + obj.isBoy;
+            alert(a);
+        }
+
+        function showMsgInAndroid() {
+            bridge.showMsg(a);
+        }
+    </script>
+</head>
+<body>
+<button type="button" value="" onclick="showMsgInAndroid()">点击事件</button>
+</body>
+</html>
